@@ -1,0 +1,6 @@
+namespace alibrary
+{
+
+void Run();
+
+}

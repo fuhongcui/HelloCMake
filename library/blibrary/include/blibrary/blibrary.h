@@ -1,0 +1,6 @@
+namespace blibrary
+{
+
+void Run();
+
+}

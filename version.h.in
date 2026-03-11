@@ -1,0 +1,4 @@
+#pragma once
+
+constexpr char* version = "@__POJECT_VERSION__@"
+
