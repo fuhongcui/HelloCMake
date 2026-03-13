@@ -11,10 +11,6 @@ configure_file(version.h.in ${PROJECT_BINARY_DIR}/version.h @ONLY)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake-modules")
 
-find_package(OpenGL REQUIRED)
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-omit-frame-pointer -fno-sanitize-recover=all -fsanitize=address " CACHE STRING "Set C++ Compiler Flags" FORCE)
-
 set(CMAKE_BUILD_RPATH_USE_ORIGIN TRUE)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
