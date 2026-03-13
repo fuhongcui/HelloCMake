@@ -1,0 +1,20 @@
+project(resource)
+
+file(GLOB_RECURSE RESOURCE_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*")
+list(FILTER RESOURCE_FILES EXCLUDE REGEX "CMakeLists\\.txt$")
+
+set(RESOURCE_STAMP "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/resource/.stamp")
+
+add_custom_command(
+    OUTPUT "${RESOURCE_STAMP}"
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_CURRENT_SOURCE_DIR}"
+        "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/resource"
+    COMMAND ${CMAKE_COMMAND} -E remove -f
+        "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/resource/CMakeLists.txt"
+    COMMAND ${CMAKE_COMMAND} -E touch "${RESOURCE_STAMP}"
+    DEPENDS ${RESOURCE_FILES}
+    COMMENT "Copying resources to ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/resource"
+)
+
+add_custom_target(${PROJECT_NAME} ALL DEPENDS "${RESOURCE_STAMP}")

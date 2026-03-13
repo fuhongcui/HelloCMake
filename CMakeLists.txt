@@ -23,7 +23,6 @@ add_subdirectory(library/alibrary)
 add_subdirectory(library/blibrary)
 add_subdirectory(external/thirdA)
 add_subdirectory(external/thirdB)
+add_subdirectory(resource)
 add_subdirectory(main)
-
-
 
