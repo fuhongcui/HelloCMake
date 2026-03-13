@@ -1,0 +1,7 @@
+project(thirdA)
+add_library(thirdA SHARED IMPORTED GLOBAL)
+set_target_properties(thirdA PROPERTIES 
+    IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/lib/libthirdA.so"
+    IMPORTED_NO_SONAME TRUE
+    INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/include"
+)

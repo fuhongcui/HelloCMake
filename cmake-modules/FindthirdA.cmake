@@ -7,9 +7,10 @@ find_package_handle_standard_args(thirdA REQUIRED_VARS thirdA_INCLUDE_DIR thirdA
 mark_as_advanced(thirdA_INCLUDE_DIR thirdA_LIBRARY)
 
 if(thirdA_FOUND AND NOT TARGET thirdA)
-    add_library(thirdA UNKNOWN IMPORTED)
+    add_library(thirdA SHARED IMPORTED)
     set_target_properties(thirdA PROPERTIES 
         IMPORTED_LOCATION "${thirdA_LIBRARY}"
+        IMPORTED_NO_SONAME TRUE
         INTERFACE_INCLUDE_DIRECTORIES "${thirdA_INCLUDE_DIR}"
     )
     message(STATUS "Found thirdA: ${thirdA_LIBRARY}")
