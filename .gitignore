@@ -1,5 +1,5 @@
 .qtcreator/
-.clangd/
+.*clangd/
 build*/
 *.o
 *.d
